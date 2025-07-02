@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Key Hôm Nay - Nguyễn Ngọc Trí 乂 MeoMeo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background-color: #f4f4f4;
+    }
+    .key {
+      font-size: 28px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 KEY HÔM NAY</h1>
+  <p class="key" id="dailyKey">Đang tạo...</p>
+  <p>(Key chỉ dùng được hôm nay)</p>
+
+  <script>
+    const token = "6864710e8fb87f655f1756f3";
+    const today = new Date().toISOString().slice(0, 10);
+    const hash = md5(token + today).substring(0, 8);
+    const finalKey = "meomeoxngtri-" + hash;
+    document.getElementById("dailyKey").innerText = finalKey;
+  </script>
+</body>
+</html>
